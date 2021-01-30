@@ -1,17 +1,23 @@
 server:
-   # 0 表示随机端口
    port: 0
    
 spring:
    application:
       name: blog-article
-      
+   datasource: 
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1/C89-S3-Ply-blog?useSSL=false
+      username: root
+      password: a
+logging: 
+   level: 
+      com.yc.blog: debug   
 eureka:
    client:
       serviceUrl:
          defaultZone: http://127.0.0.1:8000/eureka
          
-# 设定 feign.hystrix.enabled=true，那么Feign将用断路器包装所有的控制层方法
+# 锟借定 feign.hystrix.enabled=true锟斤拷锟斤拷么Feign锟斤拷锟矫讹拷路锟斤拷锟斤拷装锟斤拷锟叫的匡拷锟狡层方锟斤拷
 feign:
   hystrix:
     enabled: true
