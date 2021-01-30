@@ -1,0 +1,51 @@
+spring:
+   application:
+      # 定义应用名
+      name: cloud-zuul
+
+server:
+   port: 80
+
+eureka: 
+   client:
+      serviceUrl: 
+         defaultZone: http://127.0.0.1:8000/eureka
+# 127.0.0.1:8000 ==> Eureka服务器控制界面
+zuul:
+   
+   #将敏感偷设置在zuul下表示对所以路由都有效
+   sensitiveHeaders:  
+   routes: 
+      simple: 
+      #请求地址
+         path: /simple/**
+         #跳转的地址，简单路由在配置path的时候是以http或https开头的
+         url: http://www.163.com
+      
+      #跳转路由   
+      myForward: 
+         path: /us/**
+         url: forward:/cloud-user
+      #ribbon路由，直接跳转到服务名下的地址   
+      users: 
+         path: /user/**
+         serviceId: cloud-user
+      cloud-order: 
+         path: /orders/**
+         #zull会默认的将服务名映射为ribbon路由
+         #cloud-order：
+         #   path: /cloud-order/**
+         #
+         
+         
+         
+         #默认路由
+      default: 
+         path: /**
+         url: https://taobao.com   
+         
+         
+         
+         
+         
+                  
