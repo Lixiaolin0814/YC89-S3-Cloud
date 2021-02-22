@@ -1,0 +1,8 @@
+server:
+   # 0 表示随机端口
+   port: 0
+
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://127.0.0.1:8000/eureka
