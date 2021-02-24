@@ -6,3 +6,10 @@ eureka:
    client:
       serviceUrl:
          defaultZone: http://127.0.0.1:8000/eureka
+spring:
+   datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      #&serverTimezone=GMT%2B8
+      url: jdbc:mysql://127.0.0.1/C89-S3-Ply-sq?useSSL=false
+      username: root
+      password: a
