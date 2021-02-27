@@ -1,0 +1,13 @@
+server:
+   # 0 表示随机端口
+   port: 80
+
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://127.0.0.1:8000/eureka
+zuul:
+   routes: 
+      steam-user: /user/**
+      steam-game: /game/**
+      steam-index: /**
